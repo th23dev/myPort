@@ -64,25 +64,25 @@ let slideIndex = 0;
 
 const projects = [
    [
-      { title: 'Starbucks', url: "https://thaua23.github.io/THaua23-Starbucks-landing-page/", tags: ['html', 'css', 'js'] },
-      { title: 'FP Sellection', url: "https://thaua23.github.io/car/", tags: ['html', 'css', 'js'] },
+      { title: 'Starbucks', url: "https://th23dev.github.io/THaua23-Starbucks-landing-page/", tags: ['html', 'css', 'js'] },
+      { title: 'FP Sellection', url: "https://th23dev.github.io/car/", tags: ['html', 'css', 'js'] },
       { title: 'CRUD register', thumbnail: 'components/thumbnails/crud.png', url: "https://registrodeempresa.great-site.net/", tags: ['php', 'Sql', 'Bootstrap'] },
-      { title: 'SCM', url: "https://thaua23.github.io/SCM/", tags: ['html', 'css', 'js'] },
-      { title: 'Starbucks', url: "https://thaua23.github.io/starbucks/", tags: ['html', 'css', 'js'] },
-      { title: 'Refri', url: "https://thaua23.github.io/refri/", tags: ['html', 'css', 'js'] }
+      { title: 'SCM', url: "https://th23dev.github.io/SCM/", tags: ['html', 'css', 'js'] },
+      { title: 'Starbucks', url: "https://th23dev.github.io/starbucks/", tags: ['html', 'css', 'js'] },
+      { title: 'Refri', url: "https://th23dev.github.io/refri/", tags: ['html', 'css', 'js'] }
    ],
    [
-      { title: 'Mall System', url: "https://thaua23.github.io/Sistema-Mercado/", tags: ['html', 'css', 'js'] },
-      { title: 'NewsLatter', url: "https://thaua23.github.io/THaua23-THaua23-Landing-page-Newslatter/", tags: ['html', 'css', 'js'] },
-      { title: 'TaskBoard', url: "https://thaua23.github.io/TaskBoard/", tags: ['html', 'css', 'js'] },
-      { title: 'calculator', url: "https://thaua23.github.io/calculator/", tags: ['html', 'css', 'js'] },
-      { title: 'CommentVue', url: "https://thaua23.github.io/commentVue/", tags: ['html', 'Vue', 'Bootstrap'] },
-      { title: 'form', url: "https://thaua23.github.io/form/", tags: ['html', 'css'] }
+      { title: 'Mall System', url: "https://th23dev.github.io/Sistema-Mercado/", tags: ['html', 'css', 'js'] },
+      { title: 'NewsLatter', url: "https://th23dev.github.io/THaua23-THaua23-Landing-page-Newslatter/", tags: ['html', 'css', 'js'] },
+      { title: 'TaskBoard', url: "https://th23dev.github.io/TaskBoard/", tags: ['html', 'css', 'js'] },
+      { title: 'calculator', url: "https://th23dev.github.io/calculator/", tags: ['html', 'css', 'js'] },
+      { title: 'CommentVue', url: "https://th23dev.github.io/commentVue/", tags: ['html', 'Vue', 'Bootstrap'] },
+      { title: 'form', url: "https://th23dev.github.io/form/", tags: ['html', 'css'] }
    ],
    [
-      { title: 'voice', url: "https://thaua23.github.io/voice/", tags: ['html', 'css', 'js'] },
-      { title: 'ToDoList', url: "https://thaua23.github.io/todolist/", tags: ['html', 'css', 'js'] },
-      { title: 'penJS', url: "https://thaua23.github.io/penJS/", tags: ['html', 'css', 'js'] }
+      { title: 'voice', url: "https://th23dev.github.io/voice/", tags: ['html', 'css', 'js'] },
+      { title: 'ToDoList', url: "https://th23dev.github.io/todolist/", tags: ['html', 'css', 'js'] },
+      { title: 'penJS', url: "https://th23dev.github.io/penJS/", tags: ['html', 'css', 'js'] }
    ]
 ];
 
@@ -102,8 +102,6 @@ function updateProjects() {
          iframe.src = project.url
          link.appendChild(iframe)
       }
-
-
 
       const dataBoard = document.createElement("div")
       dataBoard.classList.add("data-board")
@@ -162,17 +160,17 @@ updateProjects()
 
 //* contact
 
-let nome = document.getElementById("name");
-let email = document.getElementById("email");
-let mensagem = document.getElementById("message");
-let botao = document.getElementById("send-button");
+let nome = document.getElementById("name")
+let email = document.getElementById("email")
+let mensagem = document.getElementById("message")
+let botao = document.getElementById("send-button")
 
 function formatarMensagem() {
-   return `Nome: ${nome.value}%0AEmail: ${email.value}%0AMensagem: ${mensagem.value}`;
+   return `Nome: ${nome.value}%0AEmail: ${email.value}%0AMensagem: ${mensagem.value}`
 }
 
 botao.addEventListener("click", function () {
-   let linkEmail = "mailto:thaua23sl@gmail.com?subject=Contato%20pelo%20site&body=" + formatarMensagem();
+   let linkEmail = "mailto:th23devsl@gmail.com?subject=Contato%20pelo%20site&body=" + formatarMensagem()
 
    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)
 
@@ -192,28 +190,27 @@ botao.addEventListener("click", function () {
 const skillList = document.getElementById('skill-list')
 
 const skills = [
-   //name, background, color
-   ['JavaScript', '#f7df1e', '#111111'],
-   ['HTML', '#e34c26', '#ffffff'],
-   ['CSS', '#9535d4ff', '#300949ff'],
-   ['PHP', '#777BB3', '#393d79'],
-   ['SQL', '#336791', '#ffffff'],
-   ['React.js', '#106aa7', '#61dafb'],
-   ['Vue.js', '#42b883', '#35495e'],
-   ['Angular.js', '#dd1b16', '#ffffff'],
-   ['Node.js', '#68a063', '#ffffff'],
-   ['Tailwind', '#38bdf8', '#0f172a'],
-   ['Python', '#3776ab', '#ffd43b'],
-   ['Git & GitHub', '#e32c26', '#ffffff'],
-   ['Gsap', '#0ae448', '#111111'],
-   ['Bootstrap', '#9561fb', '#ffffffff']
+   //title, background, color
+   { title: 'JavaScript', bg: '#f7df1e', color: '#111111' },
+   { title: 'HTML', bg: '#e34c26', color: '#ffffff' },
+   { title: 'CSS', bg: '#9535d4ff', color: '#300949ff' },
+   { title: 'PHP', bg: '#777BB3', color: '#393d79' },
+   { title: 'SQL', bg: '#336791', color: '#ffffff' },
+   { title: 'React.js', bg: '#106aa7', color: '#61dafb' },
+   { title: 'Vue.js', bg: '#42b883', color: '#35495e' },
+   { title: 'Angular.js', bg: '#dd1b16', color: '#ffffff' },
+   { title: 'Node.js', bg: '#68a063', color: '#ffffff' },
+   { title: 'Tailwind', bg: '#38bdf8', color: '#0f172a' },
+   { title: 'Python', bg: '#3776ab', color: '#ffd43b' },
+   { title: 'Git & GitHub', bg: '#e32c26', color: '#ffffff' },
+   { title: 'Gsap', bg: '#0ae448', color: '#111111' },
+   { title: 'Bootstrap', bg: '#9561fb', color: '#ffffffff' }
 ]
 
 //mostra duas vezes pro efeito de carrosel infinito
 for (let i = 1; i <= 2; i++) {
-   //mostra as skills na tela
    skills.forEach(skill => {
-      skillList.innerHTML += `<li style="--this-bg-color: ${skill[1]}; --this-text-color: ${skill[2]}">${skill[0]}</li>`
+      skillList.innerHTML += `<li style="--this-bg-color: ${skill.bg}; --this-text-color: ${skill.color}">${skill.title}</li>`
    })
 }
 
@@ -225,30 +222,20 @@ const arrow = document.getElementById("arrow")
 
 gsap.registerPlugin(ScrollTrigger)
 
-function animate(local, item,opacity, x, y, start, end) {
+function animate(local, item, opacity, x, y, start, end, scrub) {
    gsap.from(item, {
       opacity: opacity,
       x: x,
-      y:y,
+      y: y,
       scrollTrigger: {
          trigger: local,
          start: start,
          end: end,
-         scrub: true,
+         scrub: scrub,
          // markers: true
       }
    })
 }
-animate("#about-section", imgProfile, 0, -50, 0, "top 60%", "top 30%")
-animate("#about-section", aboutContent, 0, 50, 0, "top 40%", "top 10%")
-
-gsap.from(arrow, {
-      opacity: 1,
-      scrollTrigger: {
-         trigger: '#main-section',
-         start: 'top 0%',
-         end: 'bottom 90%',
-         // scrub: true,
-         // markers: true
-      }
-   })
+animate("#about-section", imgProfile, 0, -50, 0, "top 60%", "top 30%", true)
+animate("#about-section", aboutContent, 0, 50, 0, "top 40%", "top 10%", true)
+animate("#main-section", arrow, 1, 0, 0, "top 0%", "bottom 90%", false)

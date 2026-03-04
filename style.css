@@ -118,28 +118,37 @@ main {
 
    }
 
-   #arrow{
+   #arrow {
       width: 40px;
       height: 40px;
       position: absolute;
       bottom: 10px;
       animation: apontar 0.7s linear infinite;
-      rotate: 180deg;
       opacity: 0;
    }
 }
+
 @keyframes apontar {
-   0%{transform: translateY(0px);}
-   50%{transform: translateY(-10px);}
-   100%{transform: translateY(0px);}
+   0% {
+      transform: translateY(0px);
+   }
+
+   50% {
+      transform: translateY(-10px);
+   }
+
+   100% {
+      transform: translateY(0px);
+   }
 }
+
 /**-------------------------------------*/
 #about-section {
    background-color: var(--secondary-background-color);
    width: 100%;
    display: flex;
    flex-direction: column;
-   gap: 100px;
+   gap: 50px;
 
 
    #about-box {
@@ -463,5 +472,9 @@ main {
 
    #contact-section #contact-form {
       width: 90%;
+   }
+
+   #projects-section #projects-box .project-link .data-board {
+      bottom: 0%;
    }
 }
