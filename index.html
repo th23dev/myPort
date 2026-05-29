@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Raffael | dev</title>
+   <link rel="stylesheet" href="style.css">
+   <link rel="shortcut icon" href="img/icon-port.svg" type="image/x-icon">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet">
+   <!--gsap lib-->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+   <div id="particles-container"></div>
+   <main>
+
+      <section id="main-section">
+         <h1>&lt/Raffael <span>| dev</span>&gt</h1>
+         <p>Programmer dedicated to achieving my goals and meeting your expectations.</p>
+         <div id="btn-box">
+            <a href="components/curriculo_raffael_thaua.pdf" download="curriculo_raffael_thaua">Download CV</a>
+            <a href="https://github.com/th23dev" target="_blank"><img src="img/github-icon.webp" alt="github"
+                  id="github-icon"></a>
+         </div>
+         <img src="img/arrow.webp" id="arrow">
+      </section>
+
+      <section id="about-section">
+         <div id="about-box">
+            <img src="img/thaua.jpg" alt="Raffael's Profile Picture" id="img-profile">
+            <div id="about-content">
+               <h2>About Me</h2>
+               <hr>
+               <p> I’m <strong>Raffael Thauã</strong>, a web developer passionate about creating efficient and
+                  innovative digital solutions. I work with <strong>JavaScript, HTML, CSS</strong> and modern
+                  frameworks like <strong>React, Vue.js, and Tailwind</strong>, turning ideas into simple and
+                  user-friendly experiences. <br><br> I enjoy learning new tools, contributing to open-source
+                  projects, and exploring emerging technologies. Outside of coding, I love gaming and discovering new
+                  trends in tech. </p>
+               <h2>Education</h2>
+               <hr>
+               <p> I’m currently studying <strong>Information Systems at UFPA</strong> (2nd semester). Alongside
+                  myacademic journey, I’ve built strong skills in <strong>HTML, CSS, JavaScript, React, Vue.js,and
+                     Node.js</strong>, developing modern, responsive, and user-focused web applications. </p>
+            </div>
+         </div>
+
+         <div id="skills-box">
+            <h2 translate="no">Hard Skills</h2>
+            <ul id="skill-list" translate="no">
+               <!-- skills here -->
+            </ul>
+         </div>
+      </section>
+
+      <section id="projects-section">
+         <h2>Projects</h2>
+         <div id="projects-box">
+            <!-- projects here -->
+         </div>
+
+         <div id="pages">
+            <button id="prev">
+               < </button>
+                  <div id="page-numbers">
+                     <!-- numbers here -->
+                  </div>
+                  <button id="next">></button>
+         </div>
+      </section>
+      
+      <section id="contact-section">
+         <h2>Contact Me</h2>
+         <form id="contact-form">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+
+            <button type="button" id="send-button">
+               <img id="air-plane" src="img/paper-plane.webp">
+               <span>Send Email</span>
+            </button>
+         </form>
+
+         <div id="social-links">
+            <a href="https://www.instagram.com/th23_dev?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+               target="_blank"><img src="img/insta.webp" alt="My Instagram"></a>
+
+            <a href="https://www.linkedin.com/in/raffael-thau%C3%A3-da-silva-lima-ab697a344/" target="_blank"><img
+                  src="img/linkedin.webp" alt="My linkdin"></a>
+
+            <a href="https://wa.me/5591984750946" target="_blank"><img src="img/zapp.webp" alt="My WhatsApp"></a>
+         </div>
+      </section>
+
+   </main>
+
+   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+   <script src="script.js"></script>
+
+</html>
