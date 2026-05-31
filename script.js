@@ -276,7 +276,7 @@ const skills = [
    { title: 'Vue.js', bg: '#42b883', color: '#35495e' },
    { title: 'Node.js', bg: '#68a063', color: '#ffffff' },
    { title: 'Tailwind', bg: '#38bdf8', color: '#0f172a' },
-   { title: 'Python', bg: '#3776ab', color: '#ffd43b' },
+   { title: 'Python', bg: '#3776ab', color: '#143957' },
    { title: 'Git & GitHub', bg: '#e32c26', color: '#ffffff' },
    { title: 'Gsap', bg: '#0ae448', color: '#111111' },
    { title: 'Bootstrap', bg: '#9561fb', color: '#ffffffff' }
