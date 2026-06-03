@@ -195,12 +195,22 @@ main {
       justify-content: center;
       gap: 20px;
 
+      overflow: hidden;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+
       ul {
          list-style: none;
          display: flex;
          gap: 15px;
+         width: max-content;
+         will-change: transform;
          animation: carrosel 50s linear infinite;
          align-self: flex-start;
+
+         &:hover {
+            animation-play-state: paused;
+         }
 
          /*? Skills */
          li {
@@ -211,6 +221,7 @@ main {
             font-weight: bold;
             text-align: center;
             transition: 0.1s;
+            flex-shrink: 0;
 
             &:hover {
                background-color: var(--this-bg-color);
@@ -224,12 +235,11 @@ main {
 
 @keyframes carrosel {
    from {
-      transform: translateX(0px);
+      transform: translateX(0);
    }
 
    to {
       transform: translateX(-50%);
-      /* -1485.5px */
    }
 }
 
