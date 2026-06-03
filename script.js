@@ -53,24 +53,23 @@ let nextBtn = document.getElementById("next")
 let prevBtn = document.getElementById("prev")
 let projectsBox = document.getElementById("projects-box")
 let pageNumbers = document.getElementById("page-numbers")
-let slideIndex = 0;
+let slideIndex = 0
 
 
 // ─── Modal ────────────────────────────────────────────────────────────────────
-// O modal já existe no HTML — só pegamos as referências aqui
-const modalShadow = document.getElementById('modal-shadow');
-const modalBox    = document.getElementById('modal-box');
-const modalIframe = document.getElementById('modal-iframe');
-const modalTitle  = document.getElementById('modal-title');
-const modalDesc   = document.getElementById('modal-desc');
-const modalTags   = document.getElementById('modal-tags');
-const modalViewBtn = document.getElementById('modal-view-btn');
+const modalShadow = document.getElementById('modal-shadow')
+const modalBox = document.getElementById('modal-box')
+const modalIframe = document.getElementById('modal-iframe')
+const modalTitle = document.getElementById('modal-title')
+const modalDesc = document.getElementById('modal-desc')
+const modalTags = document.getElementById('modal-tags')
+const modalViewBtn = document.getElementById('modal-view-btn')
 
 function openModal(project) {
-   modalIframe.src    = project.url;   // carrega o site só aqui
+   modalIframe.src = project.url;   // carrega o site só aqui
    modalTitle.textContent = project.title;
-   modalDesc.textContent  = project.desc;
-   modalViewBtn.onclick   = () => window.open(project.url, '_blank');
+   modalDesc.textContent = project.desc;
+   modalViewBtn.onclick = () => window.open(project.url, '_blank');
 
    modalTags.innerHTML = project.tags
       .map(tag => `<span class="tag">${tag}</span>`)
@@ -81,7 +80,7 @@ function openModal(project) {
 }
 
 function closeModal() {
-   modalIframe.src = '';   // para o carregamento do site
+   modalIframe.src = ''; 
    modalBox.classList.remove('show-modal');
    modalShadow.classList.remove('show-modal');
 }
@@ -165,10 +164,10 @@ updateProjects();
 
 //* contact
 
-let nome    = document.getElementById("name")
-let email   = document.getElementById("email")
+let nome = document.getElementById("name")
+let email = document.getElementById("email")
 let mensagem = document.getElementById("message")
-let botao   = document.getElementById("send-button")
+let botao = document.getElementById("send-button")
 
 function formatarMensagem() {
    return `Nome: ${nome.value}%0AEmail: ${email.value}%0AMensagem: ${mensagem.value}`
@@ -181,7 +180,7 @@ botao.addEventListener("click", function () {
       window.location.href = "mailto:th23devsl@gmail.com?subject=Contato%20pelo%20site&body=" + formatarMensagem();
       [nome, email, mensagem].forEach(campo => campo.value = "")
    } else {
-      [nome, email, mensagem].forEach(campo => campo.style.boxShadow = "inset 0px 0px 5px rgb(226, 10, 10)")
+      [nome, email, mensagem].forEach(campo => campo.style.boxShadow = "inset 0px 0px 5px rgba(238, 0, 0, 0.51)")
       setTimeout(() => {
          [nome, email, mensagem].forEach(campo => campo.style.boxShadow = "")
       }, 1000)
@@ -219,9 +218,9 @@ for (let i = 1; i <= 2; i++) {
 
 //* gsap scroll animations
 
-const imgProfile   = document.getElementById("img-profile")
+const imgProfile = document.getElementById("img-profile")
 const aboutContent = document.getElementById("about-content")
-const arrow        = document.getElementById("arrow")
+const arrow = document.getElementById("arrow")
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -232,6 +231,6 @@ function animate(local, item, opacity, x, y, start, end, scrub) {
    })
 }
 
-animate("#about-section", imgProfile,   0, -50, 0, "top 60%", "top 30%", true)
-animate("#about-section", aboutContent, 0,  50, 0, "top 40%", "top 10%", true)
-animate("#main-section",  arrow,        1,   0, 0, "top 0%",  "bottom 90%", false)
+animate("#about-section", imgProfile, 0, -50, 0, "top 60%", "top 30%", true)
+animate("#about-section", aboutContent, 0, 50, 0, "top 40%", "top 10%", true)
+animate("#main-section", arrow, 1, 0, 0, "top 0%", "bottom 90%", false)
