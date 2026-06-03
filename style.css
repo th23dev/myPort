@@ -212,7 +212,6 @@ main {
             animation-play-state: paused;
          }
 
-         /*? Skills */
          li {
             background-color: var(--background-color);
             width: 150px;
@@ -270,10 +269,11 @@ main {
          box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
          display: inline-block;
          position: relative;
-         background-color: white;
-         background-size: contain;
+         background-color: #2a2a2a;
+         /* fallback enquanto a screenshot carrega */
+         background-size: cover;
+         background-position: center top;
          background-repeat: no-repeat;
-         background-position: center;
          cursor: pointer;
          transition: transform 0.2s ease;
 
@@ -282,17 +282,7 @@ main {
             box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.5);
          }
 
-         iframe {
-            width: 1000px;
-            height: 667px;
-            border: none;
-            pointer-events: none;
-            transform: scale(0.3);
-            transform-origin: top left;
-            position: absolute;
-            top: 0;
-            left: 0;
-         }
+         /* iframe removido daqui — não existe mais no card */
       }
    }
 
