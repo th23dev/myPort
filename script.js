@@ -199,9 +199,9 @@ const skills = [
    { title: 'PHP', bg: '#777BB3', color: '#393d79' },
    { title: 'JAVA', bg: '#df6f13', color: '#814310' },
    { title: 'SQL', bg: '#336791', color: '#ffffff' },
-   { title: 'React.js', bg: '#106aa7', color: '#61dafb' },
-   { title: 'Vue.js', bg: '#42b883', color: '#35495e' },
-   { title: 'Node.js', bg: '#68a063', color: '#ffffff' },
+   //{ title: 'React.js', bg: '#106aa7', color: '#61dafb' },
+   //{ title: 'Vue.js', bg: '#42b883', color: '#35495e' },
+   //{ title: 'Node.js', bg: '#68a063', color: '#ffffff' },
    { title: 'Tailwind', bg: '#38bdf8', color: '#0f172a' },
    { title: 'Python', bg: '#3776ab', color: '#143957' },
    { title: 'Git & GitHub', bg: '#e32c26', color: '#ffffff' },
@@ -234,3 +234,93 @@ function animate(local, item, opacity, x, y, start, end, scrub) {
 animate("#about-section", imgProfile, 0, -50, 0, "top 60%", "top 30%", true)
 animate("#about-section", aboutContent, 0, 50, 0, "top 40%", "top 10%", true)
 animate("#main-section", arrow, 1, 0, 0, "top 0%", "bottom 90%", false)
+
+//* Stickers
+
+const stickersContainer = document.getElementById('draggable-stickers');
+if (stickersContainer) {
+   const stickers = Array.from(stickersContainer.querySelectorAll('img'));
+
+   const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
+
+   function placeStickerRandomly(sticker) {
+      // Garante dimensões atuais do sticker
+      const rect = sticker.getBoundingClientRect();
+      const w = rect.width || 60;
+      const h = rect.height || 60;
+
+      // Margem para não ficar totalmente fora da tela
+      const padding = 10;
+
+      const maxX = window.innerWidth - w - padding;
+      const maxY = window.innerHeight - h - padding;
+
+      const x = clamp(Math.random() * maxX + padding, padding, window.innerWidth - w - padding);
+      const y = clamp(Math.random() * maxY + padding, padding, window.innerHeight - h - padding);
+
+      sticker.style.left = `${x}px`;
+      sticker.style.top = `${y}px`;
+   }
+
+   stickers.forEach(placeStickerRandomly);
+
+   let active = null;
+   let pointerOffsetX = 0;
+   let pointerOffsetY = 0;
+
+   function onPointerDown(e) {
+      const sticker = e.target.closest('img');
+      if (!sticker) return;
+
+      // Evita arrastar imagem nativamente
+      e.preventDefault();
+      sticker.setPointerCapture?.(e.pointerId);
+
+      const rect = sticker.getBoundingClientRect();
+      pointerOffsetX = e.clientX - rect.left;
+      pointerOffsetY = e.clientY - rect.top;
+
+      active = sticker;
+      sticker.style.zIndex = 1000;
+   }
+
+   function onPointerMove(e) {
+      if (!active) return;
+
+      e.preventDefault();
+
+      const rect = active.getBoundingClientRect();
+      const w = rect.width || 60;
+      const h = rect.height || 60;
+
+      const padding = 10;
+      const maxX = window.innerWidth - w - padding;
+      const maxY = window.innerHeight - h - padding;
+
+      const x = clamp(e.clientX - pointerOffsetX, padding, maxX);
+      const y = clamp(e.clientY - pointerOffsetY, padding, maxY);
+
+      active.style.left = `${x}px`;
+      active.style.top = `${y}px`;
+   }
+
+   function finishDrag() {
+      if (!active) return;
+      active.style.zIndex = '';
+      active = null;
+   }
+
+   window.addEventListener('pointerdown', onPointerDown);
+   window.addEventListener('pointermove', onPointerMove);
+   window.addEventListener('pointerup', finishDrag);
+   window.addEventListener('pointercancel', finishDrag);
+
+   // Reaplica posições quando a janela muda (mantém dentro da viewport)
+   window.addEventListener('resize', () => {
+      stickers.forEach((sticker, idx) => {
+         // Reposiciona apenas para garantir que não fique fora
+         placeStickerRandomly(sticker);
+      });
+   });
+}
+

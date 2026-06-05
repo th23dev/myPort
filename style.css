@@ -1,3 +1,5 @@
+@import url('stickers.css');
+
 * {
    font-family: "poppins", Helvetica, sans-serif;
    box-sizing: border-box;
@@ -186,6 +188,15 @@ main {
          box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.5);
       }
 
+   }
+
+   #style-content {
+      background-color: var(--background-color);
+      margin-left: -50px;
+      margin-right: -50px;
+      width: calc(100% + 100px);
+      padding-left: 50px;
+      padding-right: 50px;
    }
 
    #skills-box {
@@ -443,7 +454,7 @@ main {
             }
          }
       }
-   }   
+   }
 }
 
 .modal-shadow.show-modal {
