@@ -1,0 +1,99 @@
+#contact-section {
+   background-color: var(--secondary-background-color);
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   align-items: center;
+   justify-content: center;
+
+   p {
+      color: var(--secondary-text-color);
+   }
+
+   #contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 300px;
+
+      input,
+      textarea {
+         padding: 10px;
+         border: none;
+         border-radius: 5px;
+         background-color: var(--background-color);
+         color: white;
+         font-size: 16px;
+         resize: vertical;
+         transition: 0.1s;
+      }
+
+      button {
+         padding: 10px;
+         border: none;
+         width: 100%;
+         height: 45px;
+         border-radius: 5px;
+         background-color: var(--primary-color);
+         color: white;
+         font-size: 16px;
+         font-weight: bold;
+         cursor: pointer;
+         transition: background-color 0.3s;
+         position: relative;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         overflow: hidden;
+
+         &:hover {
+            background-color: #0d5880;
+
+            #air-plane {
+               right: calc(50% - 15px);
+            }
+
+            span {
+               transform: translate(440%);
+            }
+         }
+
+         #air-plane {
+            width: 30px;
+            position: absolute;
+            right: 100%;
+            transition: 0.3s;
+         }
+
+         span {
+            position: absolute;
+            transition: 0.3s;
+         }
+
+      }
+   }
+
+   #social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      width: 300px;
+      height: 40px;
+
+      a {
+         transition: 0.1s;
+
+         img {
+            width: 50px;
+            height: 50px;
+         }
+
+         &:hover {
+            scale: 1.2;
+         }
+      }
+   }
+}
+

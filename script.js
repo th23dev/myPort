@@ -237,7 +237,15 @@ animate("#main-section", arrow, 1, 0, 0, "top 0%", "bottom 90%", false)
 
 //* Stickers
 
+
 const stickersContainer = document.getElementById('draggable-stickers');
+
+const btn_sticker = document.getElementById('btn-sticker')
+
+btn_sticker.addEventListener('click', () => {
+   stickersContainer.classList.toggle('show-stickers')
+})
+
 if (stickersContainer) {
    const stickers = Array.from(stickersContainer.querySelectorAll('img'));
 

@@ -1,0 +1,140 @@
+.modal-shadow {
+   background-color: rgba(1, 1, 1, 0.548);
+   width: 100dvw;
+   height: 100dvh;
+   position: fixed;
+   backdrop-filter: blur(2px);
+   top: 0px;
+   left: 0px;
+   z-index: 1000;
+   opacity: 0;
+   visibility: hidden;
+   transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-box {
+   background-color: var(--background-color);
+   border-radius: 10px;
+   width: 80%;
+   height: 65%;
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 1001;
+   opacity: 0;
+   overflow: hidden;
+   visibility: hidden;
+   transition: opacity 0.3s ease, visibility 0.3s ease;
+
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+   .site-box {
+      width: 60%;
+      height: 100%;
+
+      .site {
+         width: 200%;
+         height: 200%;
+         border: none;
+         transform: scale(0.5);
+         transform-origin: top left;
+         display: block;
+      }
+   }
+
+   .modal-info {
+      position: relative;
+      width: 40%;
+      height: 100%;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      overflow-y: auto;
+      border-left: 1px solid #333;
+
+      .modal-title {
+         font-size: 28px;
+         font-weight: bold;
+         color: white;
+         margin: 0;
+      }
+
+      .modal-desc {
+         font-size: 14px;
+         color: #a1a1a1;
+         line-height: 1.6;
+         margin: 0;
+      }
+
+      .modal-tags {
+         display: flex;
+         gap: 8px;
+         flex-wrap: wrap;
+
+         .tag {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 12px;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+         }
+      }
+
+      .modal-buttons {
+         display: flex;
+         gap: 12px;
+         margin-top: auto;
+
+         button {
+            flex: 1;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+         }
+
+         .btn-close {
+            background-color: #444;
+            color: white;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            padding: 5px 10px;
+
+            &:hover {
+               background-color: #555;
+            }
+         }
+
+         .btn-view {
+            background-color: var(--primary-color);
+            color: white;
+
+            &:hover {
+               background-color: #0856a0;
+               transform: translateY(-2px);
+            }
+         }
+      }
+   }
+}
+
+.modal-shadow.show-modal {
+   opacity: 1;
+   visibility: visible;
+}
+
+.modal-box.show-modal {
+   opacity: 1;
+   visibility: visible;
+   transform: translate(-50%, -50%) scale(1);
+}
+

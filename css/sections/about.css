@@ -1,0 +1,106 @@
+#about-section {
+   background-color: var(--secondary-background-color);
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   gap: 50px;
+
+   #about-box {
+      display: flex;
+      gap: 80px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      #about-content {
+         max-width: 700px;
+         text-align: justify;
+
+         hr {
+            margin: 10px 0px 10px 0px;
+            height: 2px;
+            background-color: var(--secondary-text-color);
+         }
+
+         p {
+            color: var(--secondary-text-color);
+            line-height: 1.6;
+         }
+
+         strong {
+            color: var(--primary-text-color);
+         }
+      }
+
+      #img-profile {
+         max-width: 300px;
+         min-width: 200px;
+         border-radius: 10px;
+         box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.5);
+      }
+
+   }
+
+   #style-content {
+      background-color: var(--background-color);
+      margin-left: -50px;
+      margin-right: -50px;
+      width: calc(100% + 100px);
+      padding-left: 50px;
+      padding-right: 50px;
+   }
+
+   #skills-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      overflow: hidden;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+
+      ul {
+         list-style: none;
+         display: flex;
+         gap: 15px;
+         width: max-content;
+         will-change: transform;
+         animation: carrosel 50s linear infinite;
+         align-self: flex-start;
+
+         &:hover {
+            animation-play-state: paused;
+         }
+
+         li {
+            background-color: var(--background-color);
+            width: 150px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            transition: 0.1s;
+            flex-shrink: 0;
+
+            &:hover {
+               background-color: var(--this-bg-color);
+               color: var(--this-text-color);
+            }
+         }
+      }
+
+   }
+}
+
+@keyframes carrosel {
+   from {
+      transform: translateX(0);
+   }
+
+   to {
+      transform: translateX(-50%);
+   }
+}
+
