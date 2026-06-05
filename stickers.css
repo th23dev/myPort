@@ -18,3 +18,8 @@
     }
 }
 
+@media (max-width: 768px) {
+    #draggable-stickers{
+        display: none;
+    }
+}
