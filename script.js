@@ -93,23 +93,17 @@ modalShadow.addEventListener('click', closeModal);
 const projects = [
    [
       { title: 'Secretaria de Turismo', thumbnail: 'components/thumbnails/turismo.png', url: "https://th23dev.github.io/sec-turismo-curuca/", desc: "Uma landing page para a secretaria de turismo de Curuçá.", tags: ['html', 'css', 'js', 'php', 'sql'] },
+      { title: 'Eco PARA', url: "https://th23dev.github.io/ecoPara/", desc: "Trabalho de faculdade voltado para incentivar o turismo sustentável.", tags: ['html', 'css', 'js'] },
       { title: 'Starbucks', url: "https://th23dev.github.io/THaua23-Starbucks-landing-page/", desc: "Uma landing page para o café Starbucks.", tags: ['html', 'css', 'js'] },
       { title: 'FP Sellection', url: "https://th23dev.github.io/car/", desc: "Um site para a empresa FP Sellection.", tags: ['html', 'css', 'js'] },
-      { title: 'CRUD register', thumbnail: 'components/thumbnails/crud.png', url: "https://registrodeempresa.great-site.net/", desc: "Um sistema de cadastro de empresas.", tags: ['php', 'Sql', 'Bootstrap'] },
       { title: 'Starbucks', url: "https://th23dev.github.io/starbucks/", desc: "Uma landing page para o café Starbucks.", tags: ['html', 'css', 'js'] },
       { title: 'Refri', url: "https://th23dev.github.io/refri/", desc: "Um site para a empresa Refri.", tags: ['html', 'css', 'js'] }
    ],
    [
-      { title: 'Mall System', url: "https://th23dev.github.io/Sistema-Mercado/", desc: "Um sistema para o mercado.", tags: ['html', 'css', 'js'] },
+      { title: 'CRUD register', thumbnail: 'components/thumbnails/crud.png', url: "https://registrodeempresa.great-site.net/", desc: "Um sistema de cadastro de empresas.", tags: ['php', 'Sql', 'Bootstrap'] },
       { title: 'NewsLatter', url: "https://th23dev.github.io/THaua23-THaua23-Landing-page-Newslatter/", desc: "Uma landing page para o newsletter.", tags: ['html', 'css', 'js'] },
       { title: 'TaskBoard', url: "https://th23dev.github.io/TaskBoard/", desc: "Um quadro de tarefas.", tags: ['html', 'css', 'js'] },
-      { title: 'calculator', url: "https://th23dev.github.io/calculator/", desc: "Uma calculadora.", tags: ['html', 'css', 'js'] },
       { title: 'CommentVue', url: "https://th23dev.github.io/commentVue/", desc: "Um sistema de comentários com Vue.", tags: ['html', 'Vue', 'Bootstrap'] },
-      { title: 'form', url: "https://th23dev.github.io/form/", desc: "Um formulário simples.", tags: ['html', 'css'] }
-   ],
-   [
-      { title: 'voice', url: "https://th23dev.github.io/voice/", desc: "Um site para o serviço de voz.", tags: ['html', 'css', 'js'] },
-      { title: 'ToDoList', url: "https://th23dev.github.io/todolist/", desc: "Uma lista de tarefas.", tags: ['html', 'css', 'js'] },
       { title: 'SCM', url: "https://th23dev.github.io/SCM/", desc: "Um sistema de gestão de cadeia de suprimentos.", tags: ['html', 'css', 'js'] },
       { title: 'penJS', url: "https://th23dev.github.io/penJS/", desc: "Um quadro de desenhos JavaScript.", tags: ['html', 'css', 'js'] }
    ]
