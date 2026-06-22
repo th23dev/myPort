@@ -60,13 +60,41 @@ let slideIndex = 0
 const modalShadow = document.getElementById('modal-shadow')
 const modalBox = document.getElementById('modal-box')
 const modalIframe = document.getElementById('modal-iframe')
+const modalThumbnail = document.getElementById('modal-thumbnail')
 const modalTitle = document.getElementById('modal-title')
 const modalDesc = document.getElementById('modal-desc')
 const modalTags = document.getElementById('modal-tags')
 const modalViewBtn = document.getElementById('modal-view-btn')
+let modalFallbackTimer = null
+
+function getProjectPreviewUrl(project) {
+   return project.thumbnail
+      ?? `https://api.microlink.io?url=${encodeURIComponent(project.url)}&screenshot=true&meta=false&embed=screenshot.url`;
+}
+
+function showModalThumbnail(project) {
+   modalIframe.classList.add('is-hidden');
+   modalThumbnail.src = getProjectPreviewUrl(project);
+   modalThumbnail.alt = `Thumbnail do projeto ${project.title}`;
+   modalThumbnail.classList.add('show-thumbnail');
+}
 
 function openModal(project) {
-   modalIframe.src = project.url;   // carrega o site só aqui
+   clearTimeout(modalFallbackTimer);
+   modalIframe.classList.remove('is-hidden');
+   modalThumbnail.classList.remove('show-thumbnail');
+   modalThumbnail.src = '';
+
+   if (project.embedBlocked) {
+      showModalThumbnail(project);
+   } else {
+      modalIframe.onload = () => clearTimeout(modalFallbackTimer);
+      modalIframe.onerror = () => showModalThumbnail(project);
+      modalFallbackTimer = setTimeout(() => showModalThumbnail(project), 3500);
+
+      modalIframe.src = project.url;   // carrega o site só aqui
+   }
+
    modalTitle.textContent = project.title;
    modalDesc.textContent = project.desc;
    modalViewBtn.onclick = () => window.open(project.url, '_blank');
@@ -80,7 +108,13 @@ function openModal(project) {
 }
 
 function closeModal() {
+   clearTimeout(modalFallbackTimer);
+   modalIframe.onload = null;
+   modalIframe.onerror = null;
    modalIframe.src = ''; 
+   modalThumbnail.src = '';
+   modalThumbnail.classList.remove('show-thumbnail');
+   modalIframe.classList.remove('is-hidden');
    modalBox.classList.remove('show-modal');
    modalShadow.classList.remove('show-modal');
 }
@@ -92,15 +126,15 @@ modalShadow.addEventListener('click', closeModal);
 
 const projects = [
    [
-      { title: 'Secretaria de Turismo', thumbnail: 'components/thumbnails/turismo.png', url: "https://th23dev.github.io/sec-turismo-curuca/", desc: "Uma landing page para a secretaria de turismo de Curuçá.", tags: ['html', 'css', 'js', 'php', 'sql'] },
+      { title: 'Vem Viver Curuçá', thumbnail: 'components/thumbnails/vem-viver-curuca.png', embedBlocked: true, url: "https://vemvivercuruca.curuca.pa.gov.br/", desc: "Uma landing page para a secretaria de turismo de Curuçá.", tags: ['html', 'css', 'js', 'php', 'sql'] },
+      { title: 'Totem Turismo', thumbnail: 'components/thumbnails/turismo.png', url: "https://th23dev.github.io/sec-turismo-curuca/", desc: "Um totem túristico voltado para disponibilizar os pontos turisticos de Curuçá.", tags: ['html', 'css', 'js'] },
       { title: 'Eco PARA', url: "https://th23dev.github.io/ecoPara/", desc: "Trabalho de faculdade voltado para incentivar o turismo sustentável.", tags: ['html', 'css', 'js'] },
       { title: 'Starbucks', url: "https://th23dev.github.io/THaua23-Starbucks-landing-page/", desc: "Uma landing page para o café Starbucks.", tags: ['html', 'css', 'js'] },
       { title: 'FP Sellection', url: "https://th23dev.github.io/car/", desc: "Um site para a empresa FP Sellection.", tags: ['html', 'css', 'js'] },
       { title: 'Starbucks', url: "https://th23dev.github.io/starbucks/", desc: "Uma landing page para o café Starbucks.", tags: ['html', 'css', 'js'] },
-      { title: 'Refri', url: "https://th23dev.github.io/refri/", desc: "Um site para a empresa Refri.", tags: ['html', 'css', 'js'] }
    ],
    [
-      { title: 'CRUD register', thumbnail: 'components/thumbnails/crud.png', url: "https://registrodeempresa.great-site.net/", desc: "Um sistema de cadastro de empresas.", tags: ['php', 'Sql', 'Bootstrap'] },
+      { title: 'Refri', url: "https://th23dev.github.io/refri/", desc: "Um site para a empresa Refri.", tags: ['html', 'css', 'js'] },
       { title: 'NewsLatter', url: "https://th23dev.github.io/THaua23-THaua23-Landing-page-Newslatter/", desc: "Uma landing page para o newsletter.", tags: ['html', 'css', 'js'] },
       { title: 'TaskBoard', url: "https://th23dev.github.io/TaskBoard/", desc: "Um quadro de tarefas.", tags: ['html', 'css', 'js'] },
       { title: 'CommentVue', url: "https://th23dev.github.io/commentVue/", desc: "Um sistema de comentários com Vue.", tags: ['html', 'Vue', 'Bootstrap'] },
@@ -117,8 +151,7 @@ function updateProjects() {
       project.className = "project-card";
       project.setAttribute("translate", "no");
 
-      const previewUrl = projectData.thumbnail
-         ?? `https://api.microlink.io?url=${encodeURIComponent(projectData.url)}&screenshot=true&meta=false&embed=screenshot.url`;
+      const previewUrl = getProjectPreviewUrl(projectData);
 
       project.style.backgroundImage = `url('${previewUrl}')`;
       project.addEventListener('click', () => openModal(projectData));

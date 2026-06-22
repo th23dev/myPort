@@ -34,6 +34,8 @@
    .site-box {
       width: 60%;
       height: 100%;
+      position: relative;
+      background-color: #2a2a2a;
 
       .site {
          width: 200%;
@@ -41,6 +43,22 @@
          border: none;
          transform: scale(0.5);
          transform-origin: top left;
+         display: block;
+      }
+
+      .site-thumbnail {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         object-position: center top;
+         display: none;
+      }
+
+      .site.is-hidden {
+         display: none;
+      }
+
+      .site-thumbnail.show-thumbnail {
          display: block;
       }
    }
