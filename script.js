@@ -111,7 +111,7 @@ function closeModal() {
    clearTimeout(modalFallbackTimer);
    modalIframe.onload = null;
    modalIframe.onerror = null;
-   modalIframe.src = ''; 
+   modalIframe.src = '';
    modalThumbnail.src = '';
    modalThumbnail.classList.remove('show-thumbnail');
    modalIframe.classList.remove('is-hidden');
@@ -126,9 +126,9 @@ modalShadow.addEventListener('click', closeModal);
 
 const projects = [
    [
-      { title: 'Vem Viver Curuçá', thumbnail: 'components/thumbnails/vem-viver-curuca.png', embedBlocked: true, url: "https://vemvivercuruca.curuca.pa.gov.br/", desc: "Uma landing page para a secretaria de turismo de Curuçá.", tags: ['html', 'css', 'js', 'php', 'sql'] },
-      { title: 'Totem Turismo', thumbnail: 'components/thumbnails/turismo.png', url: "https://th23dev.github.io/sec-turismo-curuca/", desc: "Um totem túristico voltado para disponibilizar os pontos turisticos de Curuçá.", tags: ['html', 'css', 'js'] },
+      { title: 'Vem Viver Curuçá', thumbnail: 'components/thumbnails/vem-viver-curuca.png', embedBlocked: true, url: "https://vemvivercuruca.curuca.pa.gov.br/", desc: "Desenvolvimento do portal oficial de turismo do município de Curuçá (PA), criado para a Prefeitura Municipal com o objetivo de centralizar informações práticas e promover os atrativos da cidade junto a visitantes. O projeto contempla seções de experiências turísticas, guia de serviços, agenda de eventos e integração com o sistema de Passaporte Turístico do CAT, seguindo a lógica de portais turísticos do estado do Pará. A interface foi pensada para facilitar a navegação do visitante, com acesso rápido a mapas, hospedagens, igarapés, praias e contatos úteis.", tags: ['html', 'css', 'js', 'php', 'sql'] },
       { title: 'Eco PARA', url: "https://th23dev.github.io/ecoPara/", desc: "Trabalho de faculdade voltado para incentivar o turismo sustentável.", tags: ['html', 'css', 'js'] },
+      { title: 'Totem Turismo', thumbnail: 'components/thumbnails/turismo.png', url: "https://th23dev.github.io/sec-turismo-curuca/", desc: "Um totem túristico voltado para disponibilizar os pontos turisticos de Curuçá.", tags: ['html', 'css', 'js'] },
       { title: 'Starbucks', url: "https://th23dev.github.io/THaua23-Starbucks-landing-page/", desc: "Uma landing page para o café Starbucks.", tags: ['html', 'css', 'js'] },
       { title: 'FP Sellection', url: "https://th23dev.github.io/car/", desc: "Um site para a empresa FP Sellection.", tags: ['html', 'css', 'js'] },
       { title: 'Starbucks', url: "https://th23dev.github.io/starbucks/", desc: "Uma landing page para o café Starbucks.", tags: ['html', 'css', 'js'] },
