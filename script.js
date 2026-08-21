@@ -128,18 +128,21 @@ const projects = [
    [
       { title: 'Vem Viver Curuçá', thumbnail: 'components/thumbnails/vem-viver-curuca.png', embedBlocked: true, url: "https://vemvivercuruca.curuca.pa.gov.br/", desc: "Desenvolvimento do portal oficial de turismo do município de Curuçá (PA), criado para a Prefeitura Municipal com o objetivo de centralizar informações práticas e promover os atrativos da cidade junto a visitantes. O projeto contempla seções de experiências turísticas, guia de serviços, agenda de eventos e integração com o sistema de Passaporte Turístico do CAT, seguindo a lógica de portais turísticos do estado do Pará. A interface foi pensada para facilitar a navegação do visitante, com acesso rápido a mapas, hospedagens, igarapés, praias e contatos úteis.", tags: ['html', 'css', 'js', 'php', 'sql'] },
       { title: 'Eco PARA', url: "https://th23dev.github.io/ecoPara/", desc: "Trabalho de faculdade voltado para incentivar o turismo sustentável.", tags: ['html', 'css', 'js'] },
+      {title: 'Go Register', url: "https://th23dev.github.io/goregister/", desc: "GO REGISTER é um sistema de ponto de venda e gestão comercial pra pequenos negócios — no navegador do computador, no tablet do balcão ou no aplicativo do celular, sincronizado em tempo real pelo Firebase, sempre a mesma informação.", tags: ['java', 'firbase', 'js', 'css', 'html']},
       { title: 'Totem Turismo', thumbnail: 'components/thumbnails/turismo.png', url: "https://th23dev.github.io/sec-turismo-curuca/", desc: "Um totem túristico voltado para disponibilizar os pontos turisticos de Curuçá.", tags: ['html', 'css', 'js'] },
       { title: 'Starbucks', url: "https://th23dev.github.io/THaua23-Starbucks-landing-page/", desc: "Uma landing page para o café Starbucks.", tags: ['html', 'css', 'js'] },
       { title: 'FP Sellection', url: "https://th23dev.github.io/car/", desc: "Um site para a empresa FP Sellection.", tags: ['html', 'css', 'js'] },
-      { title: 'Starbucks', url: "https://th23dev.github.io/starbucks/", desc: "Uma landing page para o café Starbucks.", tags: ['html', 'css', 'js'] },
    ],
    [
+      { title: 'Starbucks', url: "https://th23dev.github.io/starbucks/", desc: "Uma landing page para o café Starbucks.", tags: ['html', 'css', 'js'] },
       { title: 'Refri', url: "https://th23dev.github.io/refri/", desc: "Um site para a empresa Refri.", tags: ['html', 'css', 'js'] },
       { title: 'NewsLatter', url: "https://th23dev.github.io/THaua23-THaua23-Landing-page-Newslatter/", desc: "Uma landing page para o newsletter.", tags: ['html', 'css', 'js'] },
       { title: 'TaskBoard', url: "https://th23dev.github.io/TaskBoard/", desc: "Um quadro de tarefas.", tags: ['html', 'css', 'js'] },
-      { title: 'CommentVue', url: "https://th23dev.github.io/commentVue/", desc: "Um sistema de comentários com Vue.", tags: ['html', 'Vue', 'Bootstrap'] },
       { title: 'SCM', url: "https://th23dev.github.io/SCM/", desc: "Um sistema de gestão de cadeia de suprimentos.", tags: ['html', 'css', 'js'] },
       { title: 'penJS', url: "https://th23dev.github.io/penJS/", desc: "Um quadro de desenhos JavaScript.", tags: ['html', 'css', 'js'] }
+   ],
+   [
+      { title: 'CommentVue', url: "https://th23dev.github.io/commentVue/", desc: "Um sistema de comentários com Vue.", tags: ['html', 'Vue', 'Bootstrap'] }
    ]
 ];
 
