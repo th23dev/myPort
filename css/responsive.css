@@ -1,5 +1,11 @@
 /*?----------------Media----------------*/
 
+@media (min-width: 1200px) {
+   #about-section #skills-box ul li {
+      width: 175px;
+   }
+}
+
 @media (max-width: 768px) {
    #main-section h1 {
       font-size: 30px;
