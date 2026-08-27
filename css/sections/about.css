@@ -17,7 +17,7 @@
          text-align: justify;
 
          hr {
-            margin: 10px 0px 10px 0px;
+            margin: 10px 0;
             height: 2px;
             background-color: var(--secondary-text-color);
          }
@@ -36,25 +36,15 @@
          max-width: 300px;
          min-width: 200px;
          border-radius: 10px;
-         box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.5);
+         box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.5);
       }
 
-   }
-
-   #style-content {
-      background-color: var(--background-color);
-      margin-left: -50px;
-      margin-right: -50px;
-      width: calc(100% + 100px);
-      padding-left: 50px;
-      padding-right: 50px;
    }
 
    #skills-box {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       gap: 20px;
 
       overflow: hidden;

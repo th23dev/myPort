@@ -1,11 +1,8 @@
 .modal-shadow {
    background-color: rgba(1, 1, 1, 0.548);
-   width: 100dvw;
-   height: 100dvh;
    position: fixed;
    backdrop-filter: blur(2px);
-   top: 0px;
-   left: 0px;
+   inset: 0;
    z-index: 1000;
    opacity: 0;
    visibility: hidden;
@@ -77,15 +74,13 @@
       .modal-title {
          font-size: 28px;
          font-weight: bold;
-         color: white;
-         margin: 0;
+         color: var(--primary-text-color);
       }
 
       .modal-desc {
          font-size: 14px;
-         color: #a1a1a1;
+         color: var(--secondary-text-color);
          line-height: 1.6;
-         margin: 0;
       }
 
       .modal-tags {
@@ -95,7 +90,7 @@
 
          .tag {
             background-color: var(--primary-color);
-            color: white;
+            color: var(--primary-text-color);
             font-size: 12px;
             padding: 5px 12px;
             border-radius: 4px;
@@ -116,12 +111,12 @@
             font-size: 14px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
          }
 
          .btn-close {
             background-color: #444;
-            color: white;
+            color: var(--primary-text-color);
             position: absolute;
             right: 10px;
             top: 10px;
@@ -134,7 +129,7 @@
 
          .btn-view {
             background-color: var(--primary-color);
-            color: white;
+            color: var(--primary-text-color);
 
             &:hover {
                background-color: #0856a0;
@@ -145,14 +140,9 @@
    }
 }
 
-.modal-shadow.show-modal {
-   opacity: 1;
-   visibility: visible;
-}
-
+.modal-shadow.show-modal,
 .modal-box.show-modal {
    opacity: 1;
    visibility: visible;
-   transform: translate(-50%, -50%) scale(1);
 }
 

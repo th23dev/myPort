@@ -11,20 +11,9 @@
       font-size: 30px;
    }
 
-   h2 {
+   main h2 {
       font-size: 28px;
    }
 
-   p {
-      font-size: 14px;
-   }
-
-   #contact-section #contact-form {
-      width: 90%;
-   }
-
-   #projects-section #projects-box .project-link .data-board {
-      bottom: 0%;
-   }
 }
 

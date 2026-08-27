@@ -192,32 +192,6 @@ prevBtn.addEventListener("click", () => {
 updateProjects();
 
 
-//* contact
-
-let nome = document.getElementById("name")
-let email = document.getElementById("email")
-let mensagem = document.getElementById("message")
-let botao = document.getElementById("send-button")
-
-function formatarMensagem() {
-   return `Nome: ${nome.value}%0AEmail: ${email.value}%0AMensagem: ${mensagem.value}`
-}
-
-botao.addEventListener("click", function () {
-   const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)
-
-   if (nome.value.trim() !== '' && email.value.trim() !== '' && emailValido) {
-      window.location.href = "mailto:th23devsl@gmail.com?subject=Contato%20pelo%20site&body=" + formatarMensagem();
-      [nome, email, mensagem].forEach(campo => campo.value = "")
-   } else {
-      [nome, email, mensagem].forEach(campo => campo.style.boxShadow = "inset 0px 0px 5px rgba(238, 0, 0, 0.51)")
-      setTimeout(() => {
-         [nome, email, mensagem].forEach(campo => campo.style.boxShadow = "")
-      }, 1000)
-   }
-});
-
-
 //* Skills generator
 
 const skillList = document.getElementById('skill-list')

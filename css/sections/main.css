@@ -11,7 +11,6 @@
 
    user-select: none;
    -webkit-user-select: none;
-   -moz-user-select: none;
 
    h1 {
       font-size: 48px;
@@ -31,7 +30,7 @@
 
    #btn-box {
       display: flex;
-      place-content: center;
+      justify-content: center;
       gap: 20px;
       width: 300px;
 
@@ -41,21 +40,31 @@
          padding: 10px;
          border-radius: 5px;
          background-color: #444444;
-         color: white;
-         cursor: pointer;
+         border: 1px solid white;
+         color: var(--primary-text-color);
          font-size: 16px;
          font-weight: bold;
-         transition: background-color 0.3s;
          display: flex;
          align-items: center;
          justify-content: center;
-
-         &:hover {
-            background-color: #666666;
-         }
+         transition: 0.1s;
 
          #github-icon {
             width: 30px;
+         }
+
+         &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 0 var(--primary-text-color);
+            border-color: var(--primary-text-color);
+         }
+      }
+
+      #cv-btn {
+         background-color: transparent;
+
+         &:hover{
+            background-color: #444;
          }
       }
 
@@ -72,16 +81,13 @@
 }
 
 @keyframes apontar {
-   0% {
-      transform: translateY(0px);
+   0%,
+   100% {
+      transform: translateY(0);
    }
 
    50% {
       transform: translateY(-10px);
-   }
-
-   100% {
-      transform: translateY(0px);
    }
 }
 
