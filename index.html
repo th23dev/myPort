@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
    <meta charset="UTF-8">
@@ -34,40 +34,39 @@
 
       <section id="main-section">
          <h1>&lt/Raffael <span>| dev</span>&gt</h1>
-         <p>Programmer dedicated to achieving my goals and meeting your expectations.</p>
+         <p>Programador dedicado a alcançar meus objetivos e superar suas expectativas.</p>
          <div id="btn-box">
-            <a href="components/curriculo_raffael_thaua.pdf" download="curriculo_raffael_thaua" id="cv-btn">Download
-               CV</a>
-            <a href="https://github.com/th23dev" target="_blank"><img src="imgs/github-icon.webp" alt="github"
+            <a href="components/curriculo_raffael_thaua.pdf" download="curriculo_raffael_thaua" id="cv-btn">Baixar
+               currículo</a>
+            <a href="https://github.com/th23dev" target="_blank"><img src="imgs/github-icon.webp" alt="GitHub"
                   id="github-icon"></a>
          </div>
-         <img src="imgs/arrow.webp" id="arrow">
+         <img src="imgs/arrow.webp" id="arrow" alt="Rolar para baixo">
       </section>
 
       <section id="about-section">
          <div id="about-box">
-            <img src="imgs/thaua.jpg" alt="Raffael's Profile Picture" id="img-profile">
+            <img src="imgs/thaua.jpg" alt="Foto de perfil de Raffael" id="img-profile">
             <div id="about-content">
-               <h2>About Me</h2>
+               <h2>Sobre mim</h2>
                <hr>
-               <p> I'm <strong>Raffael Thauã</strong>, a web developer passionate about creating efficient and
-                  innovative digital solutions. I work with <strong>JavaScript, HTML, CSS, PHP</strong> and modern
-                  frameworks like <strong>React and Tailwind</strong>, turning ideas into simple and
-                  user-friendly experiences. <br><br> I enjoy learning new tools, contributing to open-source
-                  projects, and exploring emerging technologies. Outside of coding, I love gaming and discovering new
-                  trends in tech. </p>
-               <h2>Education</h2>
+               <p>Sou <strong>Raffael Thauã</strong>, desenvolvedor web apaixonado por criar soluções digitais eficientes e
+                  inovadoras. Trabalho com <strong>JavaScript, HTML, CSS, PHP</strong> e frameworks modernos como
+                  <strong>React e Tailwind</strong>, transformando ideias em experiências simples e fáceis de usar.
+                  <br><br>Gosto de aprender novas ferramentas, contribuir com projetos de código aberto e explorar
+                  tecnologias emergentes. Fora da programação, adoro jogar e descobrir novas tendências de tecnologia.</p>
+               <h2>Formação</h2>
                <hr>
-               <p> I'm currently studying <strong>Information Systems at UFPA</strong> (4th semester). Alongside
-                  my academic journey, I've built strong skills in <strong>HTML, CSS, JavaScript, React, Vue.js, and
-                     Node.js</strong>, developing modern, responsive, and user-focused web applications. </p>
+               <p>Atualmente curso <strong>Sistemas de Informação na UFPA</strong> (4º semestre). Ao longo da minha
+                  formação, desenvolvi habilidades sólidas em <strong>HTML, CSS, JavaScript, React,
+                  Node.js e PHP</strong>, criando aplicações web modernas, responsivas e focadas no usuário.</p>
             </div>
          </div>
 
 
 
          <div id="skills-box">
-            <h2 id="btn-sticker" translate="no">Hard Skills</h2>
+            <h2 id="btn-sticker" translate="no">Habilidades técnicas</h2>
             <ul id="skill-list" translate="no">
                <!-- skills -->
             </ul>
@@ -75,17 +74,17 @@
       </section>
 
       <section id="projects-section">
-         <h2>Projects</h2>
+         <h2>Projetos</h2>
          <div id="projects-box">
             <!-- projects -->
          </div>
 
          <div id="pages">
-            <button id="prev">&lt;</button>
+            <button id="prev" aria-label="Página anterior">&lt;</button>
             <div id="page-numbers">
                <!-- números -->
             </div>
-            <button id="next">&gt;</button>
+            <button id="next" aria-label="Próxima página">&gt;</button>
          </div>
       </section>
 
@@ -94,7 +93,7 @@
 
       <div id="modal-box" class="modal-box">
          <div class="site-box">
-            <iframe id="modal-iframe" class="site"></iframe>
+            <iframe id="modal-iframe" class="site" title="Pré-visualização do projeto"></iframe>
             <img id="modal-thumbnail" class="site-thumbnail" src="" alt="">
          </div>
          <div class="modal-info">
@@ -102,7 +101,7 @@
             <p id="modal-desc" class="modal-desc"></p>
             <div id="modal-tags" class="modal-tags"></div>
             <div class="modal-buttons">
-               <button id="modal-close-btn" class="btn-close">X</button>
+               <button id="modal-close-btn" class="btn-close" aria-label="Fechar detalhes do projeto">X</button>
                <button id="modal-view-btn" class="btn-view">Ver Mais</button>
             </div>
          </div>
@@ -110,11 +109,17 @@
       <!-- /Modal -->
 
       <section id="contact-section">
+         <div id="contact-content">
+            <h2>Vamos trabalhar juntos</h2>
+            <hr>
+            <p>Tem um projeto, uma ideia ou uma oportunidade em mente? Conheça meu trabalho e vamos criar algo útil e marcante.</p>
+            <a href="#projects-section">Conheça meus projetos</a>
+         </div>
          <div id="social-links">
             <a href="https://wa.me/5591984750946" id="zapp" target="_blank" rel="noopener noreferrer">
                <div class="title-box">
                   <img src="imgs/whatsapp.webp" alt="">
-                  <span>Whatsapp</span>
+                  <span>WhatsApp</span>
                </div>
                (91) 98475-0946
             </a>
@@ -129,7 +134,7 @@
                target="_blank" rel="noopener noreferrer">
                <div class="title-box">
                   <img src="imgs/linkedin.webp" alt="">
-                  <span>Linkedin</span>
+                  <span>LinkedIn</span>
                </div>
                Raffael Thauã da Silva Lima
             </a>
