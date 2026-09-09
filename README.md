@@ -31,6 +31,27 @@ Currently in the 3rd semester, building strong technical skills alongside my aca
 - Develop user-focused interfaces and experiences
 - Contribute to open-source projects
 - Explore and adopt emerging technologies
+
+## Project Structure
+
+```text
+.
+├── index.html              # Main portfolio page
+├── js/
+│   ├── main.js             # Page interactions and UI behavior
+│   └── data/
+│       └── projects.js     # Project portfolio data
+├── css/
+│   ├── base.css            # Global styles and CSS imports
+│   ├── responsive.css      # Responsive rules
+│   ├── stickers.css        # Sticker interactions and layout
+│   └── sections/           # Styles grouped by page section
+├── imgs/                   # Images, thumbnails, icons and stickers
+└── components/             # Downloadable documents and components
+```
+
+The portfolio is a static site and can be opened directly in the browser. No local server or build step is required.
+
 ---
  
 ## Interests
