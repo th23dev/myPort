@@ -71,10 +71,6 @@
       }
    }
 
-   body.modal-open #draggable-stickers {
-      pointer-events: none;
-   }
-
 }
 
 @media (max-width: 480px) {

@@ -25,10 +25,31 @@
          background-repeat: no-repeat;
          cursor: pointer;
          transition: transform 0.2s ease;
+         position: relative;
 
          &:hover {
             transform: translateY(-5px);
             box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.5);
+         }
+      }
+
+      .emphasis {
+         &::after {
+            content: "DESTAQUE";
+            display: block;
+            min-width: 92px;
+            color: var(--primary-text-color);
+            background-color: var(--primary-color);
+            padding: 7px 10px;
+            border-bottom-left-radius: 5px;
+            box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.35);
+            font-size: 11px;
+            font-weight: 700;
+            line-height: 1;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            right: 0;
          }
       }
    }
@@ -60,4 +81,3 @@
       }
    }
 }
-

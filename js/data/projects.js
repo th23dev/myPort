@@ -1,6 +1,7 @@
 const projects = [
     [
         {
+            emphasis: true,
             title: 'Vem Viver Curuçá | Portal de Turismo',
             thumbnail: 'imgs/thumbnails/vem-viver-curuca.png',
             embedBlocked: true,
@@ -11,20 +12,21 @@ const projects = [
             tags: ['html', 'css', 'js', 'php', 'sql']
         },
         {
-            title: 'EcoPará | Guia de Turismo Sustentável',
-            url: "https://th23dev.github.io/ecoPara/",
-            desc: `Guia visual de destinos paraenses criado em um projeto acadêmico para incentivar o turismo sustentável.
-                A plataforma reúne cidades, rios, praias, igarapés e áreas verdes, conectando informações sobre natureza,
-                cultura regional e roteiros de baixo impacto.`,
-            tags: ['html', 'css', 'js']
-        },
-        {
+            emphasis: true,
             title: 'GO REGISTER | Vendas e Gestão Comercial',
             url: "https://th23dev.github.io/goregister/",
             desc: `Sistema de ponto de venda e gestão comercial para pequenos negócios.
                 O GO REGISTER reúne vendas, estoque, caixa, financeiro, cadastros, relatórios e exportação de dados em uma experiência multiplataforma,
                 com informações sincronizadas em tempo real pelo Firebase e permissões por usuário.`,
             tags: ['firebase', 'js', 'css', 'html']
+        },
+        {
+            title: 'EcoPará | Guia de Turismo Sustentável',
+            url: "https://th23dev.github.io/ecoPara/",
+            desc: `Guia visual de destinos paraenses criado em um projeto acadêmico para incentivar o turismo sustentável.
+                A plataforma reúne cidades, rios, praias, igarapés e áreas verdes, conectando informações sobre natureza,
+                cultura regional e roteiros de baixo impacto.`,
+            tags: ['html', 'css', 'js']
         },
         {
             title: 'Starbucks | Coffee Experience',

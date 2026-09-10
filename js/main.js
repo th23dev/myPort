@@ -1,51 +1,3 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-   const is4K = window.innerWidth >= 3840;
-
-   tsParticles.load("particles-container", {
-      fpsLimit: 60,
-      interactivity: {
-         events: {
-            onHover: { enable: true, mode: "repulse" },
-            onClick: { enable: false, mode: "push" },
-            resize: true,
-         },
-         modes: {
-            push: { quantity: 4 },
-            repulse: { distance: 100, duration: 0.4 },
-         },
-      },
-      particles: {
-         color: { value: "#ffffff" },
-         links: {
-            color: "#a1a1a1",
-            distance: 150,
-            enable: true,
-            opacity: 0.4,
-            width: 1,
-         },
-         collisions: { enable: true },
-         move: {
-            direction: "none",
-            enable: true,
-            outModes: { default: "bounce" },
-            random: false,
-            speed: 1,
-            straight: false,
-         },
-         number: {
-            density: { enable: true, area: 800 },
-            value: is4K ? 40 : 80,
-         },
-         opacity: { value: 0.5 },
-         shape: { type: "circle" },
-         size: {
-            value: is4K ? { min: 1, max: 3 } : { min: 1, max: 5 },
-         },
-      },
-      detectRetina: true,
-   });
-});
-
 const typingText = document.getElementById('typing-text');
 const titles = ['</Raffael | dev>', '{ th23dev }', 'raffael.th'];
 let titleIndex = 0;
@@ -226,7 +178,9 @@ function updateProjects() {
 
    projects[slideIndex].forEach(projectData => {
       const project = document.createElement("div");
-      project.className = "project-card";
+
+      (!projectData.emphasis) ? project.className = "project-card" : project.className = "project-card emphasis";
+      
       project.setAttribute("translate", "no");
       project.setAttribute("role", "button");
       project.setAttribute("tabindex", "0");
@@ -323,100 +277,4 @@ animate("#about-section", imgProfile, 0, -50, 0, "top 60%", "top 30%", true)
 animate("#about-section", aboutContent, 0, 50, 0, "top 40%", "top 10%", true)
 animate("#main-section", arrow, 1, 0, 0, "top 0%", "bottom 90%", false)
 
-//* Stickers
-
-
-const stickersContainer = document.getElementById('draggable-stickers');
-
-const btn_sticker = document.getElementById('btn-sticker')
-
-btn_sticker.addEventListener('click', () => {
-   stickersContainer.classList.toggle('show-stickers')
-})
-
-if (stickersContainer) {
-   const stickers = Array.from(stickersContainer.querySelectorAll('img'));
-
-   const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
-
-   function placeStickerRandomly(sticker) {
-      // Garante dimensões atuais do sticker
-      const rect = sticker.getBoundingClientRect();
-      const w = rect.width || 60;
-      const h = rect.height || 60;
-
-      // Margem para não ficar totalmente fora da tela
-      const padding = 10;
-
-      const maxX = window.innerWidth - w - padding;
-      const maxY = window.innerHeight - h - padding;
-
-      const x = clamp(Math.random() * maxX + padding, padding, window.innerWidth - w - padding);
-      const y = clamp(Math.random() * maxY + padding, padding, window.innerHeight - h - padding);
-
-      sticker.style.left = `${x}px`;
-      sticker.style.top = `${y}px`;
-   }
-
-   stickers.forEach(placeStickerRandomly);
-
-   let active = null;
-   let pointerOffsetX = 0;
-   let pointerOffsetY = 0;
-
-   function onPointerDown(e) {
-      const sticker = e.target.closest('img');
-      if (!sticker) return;
-
-      // Evita arrastar imagem nativamente
-      e.preventDefault();
-      sticker.setPointerCapture?.(e.pointerId);
-
-      const rect = sticker.getBoundingClientRect();
-      pointerOffsetX = e.clientX - rect.left;
-      pointerOffsetY = e.clientY - rect.top;
-
-      active = sticker;
-      sticker.style.zIndex = 1000;
-   }
-
-   function onPointerMove(e) {
-      if (!active) return;
-
-      e.preventDefault();
-
-      const rect = active.getBoundingClientRect();
-      const w = rect.width || 60;
-      const h = rect.height || 60;
-
-      const padding = 10;
-      const maxX = window.innerWidth - w - padding;
-      const maxY = window.innerHeight - h - padding;
-
-      const x = clamp(e.clientX - pointerOffsetX, padding, maxX);
-      const y = clamp(e.clientY - pointerOffsetY, padding, maxY);
-
-      active.style.left = `${x}px`;
-      active.style.top = `${y}px`;
-   }
-
-   function finishDrag() {
-      if (!active) return;
-      active.style.zIndex = '';
-      active = null;
-   }
-
-   window.addEventListener('pointerdown', onPointerDown);
-   window.addEventListener('pointermove', onPointerMove);
-   window.addEventListener('pointerup', finishDrag);
-   window.addEventListener('pointercancel', finishDrag);
-
-   // Reaplica posições quando a janela muda (mantém dentro da viewport)
-   window.addEventListener('resize', () => {
-      stickers.forEach((sticker, idx) => {
-         // Reposiciona apenas para garantir que não fique fora
-         placeStickerRandomly(sticker);
-      });
-   });
-}
 

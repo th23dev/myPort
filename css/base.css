@@ -4,7 +4,6 @@
 @import url('sections/modal.css');
 @import url('sections/projects.css');
 @import url('responsive.css');
-@import url('stickers.css');
 
 * {
    font-family: "poppins", Helvetica, sans-serif;
