@@ -35,10 +35,10 @@
       background-color: #2a2a2a;
 
       .site {
-         width: 200%;
-         height: 200%;
+         width: 133.333%;
+         height: 133.333%;
          border: none;
-         transform: scale(0.5);
+         transform: scale(0.75);
          transform-origin: top left;
          display: block;
       }
@@ -89,12 +89,51 @@
          flex-wrap: wrap;
 
          .tag {
-            background-color: var(--primary-color);
+            background-color: #4b5563;
             color: var(--primary-text-color);
             font-size: 12px;
             padding: 5px 12px;
             border-radius: 4px;
             font-weight: 600;
+         }
+
+         .tag-html {
+            background-color: #e34f26;
+         }
+
+         .tag-css {
+            background-color: #9535d4ff;
+         }
+
+         .tag-js {
+            background-color: #d6b817;
+            color: #181818;
+         }
+
+         .tag-php {
+            background-color: #777bb4;
+         }
+
+         .tag-sql {
+            background-color: #336791;
+         }
+
+         .tag-java {
+            background-color: #df6f13;
+         }
+
+         .tag-firebase {
+            background-color: #d85600;
+            color: #181818;
+         }
+
+         .tag-vue {
+            background-color: #42b883;
+            color: #173b2d;
+         }
+
+         .tag-bootstrap {
+            background-color: #7952b3;
          }
       }
 

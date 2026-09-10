@@ -100,7 +100,10 @@ function openModal(project) {
    modalViewBtn.onclick = () => window.open(project.url, '_blank');
 
    modalTags.innerHTML = project.tags
-      .map(tag => `<span class="tag">${tag}</span>`)
+      .map(tag => {
+         const tagClass = tag.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+         return `<span class="tag tag-${tagClass}">${tag}</span>`;
+      })
       .join('');
 
    modalBox.classList.add('show-modal');
@@ -178,12 +181,12 @@ const skills = [
    { title: 'JavaScript', bg: '#f7df1e', color: '#111111' },
    { title: 'HTML', bg: '#e34c26', color: '#ffffff' },
    { title: 'CSS', bg: '#9535d4ff', color: '#300949ff' },
+   { title: 'React.js', bg: '#106aa7', color: '#61dafb' },
    { title: 'PHP', bg: '#777BB3', color: '#393d79' },
-   { title: 'JAVA', bg: '#df6f13', color: '#814310' },
    { title: 'SQL', bg: '#336791', color: '#ffffff' },
-   //{ title: 'React.js', bg: '#106aa7', color: '#61dafb' },
+   { title: 'JAVA', bg: '#df6f13', color: '#814310' },
    //{ title: 'Vue.js', bg: '#42b883', color: '#35495e' },
-   //{ title: 'Node.js', bg: '#68a063', color: '#ffffff' },
+   { title: 'Node.js', bg: '#68a063', color: '#ffffff' },
    { title: 'Tailwind', bg: '#38bdf8', color: '#0f172a' },
    { title: 'Python', bg: '#3776ab', color: '#143957' },
    { title: 'Git & GitHub', bg: '#e32c26', color: '#ffffff' },
