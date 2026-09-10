@@ -46,6 +46,85 @@ document.addEventListener('DOMContentLoaded', (event) => {
    });
 });
 
+const typingText = document.getElementById('typing-text');
+const titles = ['</Raffael | dev>', '{ th23dev }', 'raffael.th'];
+let titleIndex = 0;
+let fullTitle = titles[titleIndex];
+let typedCharacters = 0;
+let typingTimer;
+let isDeleting = false;
+
+function appendHighlightedBraces(text) {
+   let normalText = '';
+
+   for (const character of text) {
+      if (character === '{' || character === '}') {
+         if (normalText) {
+            typingText.append(normalText);
+            normalText = '';
+         }
+
+         const brace = document.createElement('span');
+         brace.textContent = character;
+         typingText.append(brace);
+      } else {
+         normalText += character;
+      }
+   }
+
+   if (normalText) {
+      typingText.append(normalText);
+   }
+}
+
+function renderTypedTitle() {
+   const accentStart = fullTitle.indexOf('|');
+   const accentEnd = fullTitle.length - 1;
+
+   typingText.replaceChildren();
+
+   if (accentStart === -1) {
+      appendHighlightedBraces(fullTitle.slice(0, typedCharacters));
+   } else if (typedCharacters <= accentStart) {
+      typingText.textContent = fullTitle.slice(0, typedCharacters);
+   } else {
+      typingText.append(fullTitle.slice(0, accentStart));
+      const accentText = document.createElement('span');
+      accentText.textContent = fullTitle.slice(accentStart, Math.min(typedCharacters, accentEnd));
+      typingText.append(accentText);
+
+      if (typedCharacters > accentEnd) {
+         typingText.append(fullTitle.slice(accentEnd, typedCharacters));
+      }
+   }
+
+   if (!isDeleting && typedCharacters < fullTitle.length) {
+      typedCharacters += 1;
+      typingTimer = setTimeout(renderTypedTitle, 140);
+   } else if (!isDeleting) {
+      isDeleting = true;
+      typingTimer = setTimeout(renderTypedTitle, 2900);
+   } else if (typedCharacters > 0) {
+      typedCharacters -= 1;
+      typingTimer = setTimeout(renderTypedTitle, 90);
+   } else {
+      titleIndex = (titleIndex + 1) % titles.length;
+      fullTitle = titles[titleIndex];
+      isDeleting = false;
+      typingTimer = setTimeout(renderTypedTitle, 400);
+   }
+}
+
+function startTyping(text) {
+   clearTimeout(typingTimer);
+   fullTitle = text;
+   typedCharacters = 0;
+   isDeleting = false;
+   renderTypedTitle();
+}
+
+startTyping(fullTitle);
+
 
 //* projects slider
 
@@ -65,6 +144,7 @@ const modalTitle = document.getElementById('modal-title')
 const modalDesc = document.getElementById('modal-desc')
 const modalTags = document.getElementById('modal-tags')
 const modalViewBtn = document.getElementById('modal-view-btn')
+let modalTrigger = null
 let modalFallbackTimer = null
 
 function getProjectPreviewUrl(project) {
@@ -80,6 +160,7 @@ function showModalThumbnail(project) {
 }
 
 function openModal(project) {
+   modalTrigger = document.activeElement;
    clearTimeout(modalFallbackTimer);
    modalIframe.classList.remove('is-hidden');
    modalThumbnail.classList.remove('show-thumbnail');
@@ -108,6 +189,10 @@ function openModal(project) {
 
    modalBox.classList.add('show-modal');
    modalShadow.classList.add('show-modal');
+   modalBox.setAttribute('aria-hidden', 'false');
+   modalShadow.setAttribute('aria-hidden', 'false');
+   document.body.classList.add('modal-open');
+   modalBox.focus();
 }
 
 function closeModal() {
@@ -120,10 +205,19 @@ function closeModal() {
    modalIframe.classList.remove('is-hidden');
    modalBox.classList.remove('show-modal');
    modalShadow.classList.remove('show-modal');
+   modalBox.setAttribute('aria-hidden', 'true');
+   modalShadow.setAttribute('aria-hidden', 'true');
+   document.body.classList.remove('modal-open');
+   modalTrigger?.focus();
 }
 
 document.getElementById('modal-close-btn').addEventListener('click', closeModal);
 modalShadow.addEventListener('click', closeModal);
+document.addEventListener('keydown', event => {
+   if (event.key === 'Escape' && modalBox.classList.contains('show-modal')) {
+      closeModal();
+   }
+});
 // ─────────────────────────────────────────────────────────────────────────────
 
 
@@ -134,11 +228,20 @@ function updateProjects() {
       const project = document.createElement("div");
       project.className = "project-card";
       project.setAttribute("translate", "no");
+      project.setAttribute("role", "button");
+      project.setAttribute("tabindex", "0");
+      project.setAttribute("aria-label", `Ver detalhes de ${projectData.title}`);
 
       const previewUrl = getProjectPreviewUrl(projectData);
 
       project.style.backgroundImage = `url('${previewUrl}')`;
       project.addEventListener('click', () => openModal(projectData));
+      project.addEventListener('keydown', event => {
+         if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openModal(projectData);
+         }
+      });
       projectsBox.appendChild(project);
    });
 

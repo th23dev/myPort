@@ -185,3 +185,7 @@
    visibility: visible;
 }
 
+body.modal-open {
+   overflow: hidden;
+}
+

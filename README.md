@@ -13,7 +13,7 @@ I focus on turning ideas into simple, user-friendly digital experiences. I enjoy
 ## Education
  
 **Information Systems** — UFPA (Universidade Federal do Pará)
-Currently in the 3rd semester, building strong technical skills alongside my academic journey.
+Currently in the 4th semester, building strong technical skills alongside my academic journey.
  
 ---
  

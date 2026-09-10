@@ -12,13 +12,21 @@
    user-select: none;
    -webkit-user-select: none;
 
-   h1 {
-      font-size: 48px;
+   #title {
+      font-size: 3rem;
       font-weight: bold;
-      width: 400px;
+      width: auto;
+      overflow: hidden;
+      white-space: nowrap;
 
-      span {
-         color: var(--primary-color);
+      #typing-text {
+         display: inline-block;
+         border-right: 5px solid white;
+         animation: blinkCursor 1s infinite;
+
+         > span {
+            color: var(--primary-color);
+         }
       }
    }
 
@@ -88,6 +96,12 @@
 
    50% {
       transform: translateY(-10px);
+   }
+}
+
+@keyframes blinkCursor {
+   50%{
+      border-right: 5px solid transparent;
    }
 }
 

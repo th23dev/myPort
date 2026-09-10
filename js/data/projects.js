@@ -24,7 +24,7 @@ const projects = [
             desc: `Sistema de ponto de venda e gestão comercial para pequenos negócios.
                 O GO REGISTER reúne vendas, estoque, caixa, financeiro, cadastros, relatórios e exportação de dados em uma experiência multiplataforma,
                 com informações sincronizadas em tempo real pelo Firebase e permissões por usuário.`,
-            tags: ['java', 'firebase', 'js', 'css', 'html']
+            tags: ['firebase', 'js', 'css', 'html']
         },
         {
             title: 'Starbucks | Coffee Experience',
