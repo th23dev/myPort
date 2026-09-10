@@ -11,6 +11,22 @@
       font-size: 30px;
    }
 
+   #about-section #experience-box {
+      width: 100%;
+
+      .experience-list {
+         grid-template-columns: 1fr;
+      }
+
+      .experience-content {
+         padding: 18px;
+
+         h3 {
+            font-size: 19px;
+         }
+      }
+   }
+
    main h2 {
       font-size: 28px;
    }
