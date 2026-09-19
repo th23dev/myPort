@@ -21,12 +21,13 @@ const projects = [
             tags: ['firebase', 'js', 'css', 'html']
         },
         {
-            title: 'EcoPará | Guia de Turismo Sustentável',
-            url: "https://th23dev.github.io/ecoPara/",
-            desc: `Guia visual de destinos paraenses criado em um projeto acadêmico para incentivar o turismo sustentável.
-                A plataforma reúne cidades, rios, praias, igarapés e áreas verdes, conectando informações sobre natureza,
-                cultura regional e roteiros de baixo impacto.`,
-            tags: ['html', 'css', 'js']
+            emphasis: true,
+            title: 'Barbearia de Diego',
+            url: "https://th23dev.github.io/barbeariadodiego/",
+            desc: `Projeto web dedicado à apresentação da Barbearia de Diego e à sua presença digital.
+                Desenvolvido com React e Tailwind CSS, combina a construção da interface em componentes
+                com estilização por classes utilitárias.`,
+            tags: ['react', 'tailwind']
         },
         {
             title: 'Starbucks | Coffee Experience',
@@ -103,5 +104,15 @@ const projects = [
                 modo borracha e limpeza completa da tela.`,
             tags: ['html', 'css', 'js']
         }
+    ],
+    [
+        {
+            title: 'EcoPará | Guia de Turismo Sustentável',
+            url: "https://th23dev.github.io/ecoPara/",
+            desc: `Guia visual de destinos paraenses criado em um projeto acadêmico para incentivar o turismo sustentável.
+                A plataforma reúne cidades, rios, praias, igarapés e áreas verdes, conectando informações sobre natureza,
+                cultura regional e roteiros de baixo impacto.`,
+            tags: ['html', 'css', 'js']
+        },
     ]
 ];

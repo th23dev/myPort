@@ -132,6 +132,16 @@
             color: #173b2d;
          }
 
+         .tag-react {
+            background-color: #61dafb;
+            color: #082f49;
+         }
+
+         .tag-tailwind {
+            background-color: #38bdf8;
+            color: #082f49;
+         }
+
          .tag-bootstrap {
             background-color: #7952b3;
          }
